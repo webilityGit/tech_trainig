@@ -7,8 +7,10 @@
     'version':'0.0.1',
     'category':'Kawiil/Custom Modules',
     'website': 'https://github.com/webilityGit/tech_training',
-    'depends': ['base'],
+    'depends': [],
     'data': [],
-    'demo': [],
+    'demo': [
+        'demo/motor_demo.xml',
+    ],
     'application': True,
 }
