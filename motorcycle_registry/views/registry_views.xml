@@ -11,12 +11,17 @@
                     <h1><field name="registry_number" string="Registry number"/></h1>
                     <group>
                         <group>
-                            <separator string="Register Settings"/>
+                            <separator string="Register Information"/>
                                <field name="registry_number" string="Registry number"/>
+                               <field name="vin" string="VIN"/>
+                               <field name="current_mileage" string="Current Mileage"/>
+                               <field name="license_plate" string="License Plate Number"/> 
+                                
                         </group>
                         <group>
                             <separator string="Other Fields"/>
                             <field name="first_name" string="First name"/>
+                            <field name="last_name" string="Last name"/>
                         </group>
                     </group>
                     <notebook>
@@ -28,6 +33,34 @@
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="registry_view_list" model="ir.ui.view">
+        <field name="name">registry.view.list</field>
+        <field name="model">motorcycle.registry</field>
+        <field name="arch" type="xml">
+            <tree string="Register List">
+                <field name="registry_number" string="Registry Number"/>
+                <field name="vin" string="VIN"/>
+                <field name="license_plate" string="License Plate"/>
+                <field name="first_name" string="Owner First Name"/>
+                <field name="last_name" string="Owner Last Name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="registry_view_search" model="ir.ui.view">
+        <field name="name">registry.view.search</field>
+        <field name="model">motorcycle.registry</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="registry_number"/>
+                <field name="vin"/>
+                <field name="last_name"/>
+                <field name="license_plate"/>
+                <field name="date_registry" string="Date" context="{'group_by':'date_registry'}"/>
+            </search>
         </field>
     </record>
 </odoo>
