@@ -13,6 +13,7 @@
         'security/ir.model.access.csv',
         'security/registry_security.xml',
         'views/menuitems.xml',
+        'views/registry_views.xml',
     ],
     'demo': [
         'demo/motor_demo.xml',
