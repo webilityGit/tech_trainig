@@ -2,7 +2,7 @@
 
 <odoo>
     <data noupdate="1">
-        <record id="manager_admin" model="ir.rule">
+        <record id="manager_admin_rule" model="ir.rule">
             <field name="name">Manager Admin</field>
             <field name="model_id" ref="model_motorcycle_registry"/>
             <field name="domain_force">[(1, '=', 1)]</field>
@@ -12,7 +12,7 @@
             <field name="perm_unlink">1</field>
             <field name="groups" eval="[Command.link(ref('motorcycle_registry.group_register_admin'))]"/>
         </record>
-        <record id="manager_user" model="ir.rule">
+        <record id="manager_user_rule" model="ir.rule">
             <field name="name">Manager User</field>
             <field name="model_id" ref="model_motorcycle_registry"/>
             <field name="domain_force">[(1, '=', 1)]</field>
@@ -22,7 +22,7 @@
             <field name="perm_unlink">0</field>
             <field name="groups" eval="[Command.link(ref('motorcycle_registry.group_register_user'))]"/>
         </record>
-        <record id="manager_read_all" model="ir.rule">
+        <record id="manager_read_all_rule" model="ir.rule">
             <field name="name">Manager Read All</field>
             <field name="model_id" ref="model_motorcycle_registry"/>
             <field name="domain_force">[(1, '=', 1)]</field> 
