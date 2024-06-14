@@ -60,6 +60,9 @@
                 <field name="last_name"/>
                 <field name="license_plate"/>
                 <field name="date_registry" string="Date" context="{'group_by':'date_registry'}"/>
+                <filter name="filter_date_registry" date="date_registry" string="Registration Date"/>
+                <filter name="groupby_date_registry" string="Registration Date"/>
+                
             </search>
         </field>
     </record>
