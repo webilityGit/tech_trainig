@@ -2,3 +2,6 @@ id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 manager_admin,manager admin,model_motorcycle_registry,group_register_admin,1,1,1,1
 manager_user,manager user,model_motorcycle_registry,group_register_user,1,1,0,0
 manager_read_all,manager read all,model_motorcycle_registry,,1,0,0,0
+session_admin,session admin,model_motorcycle_session,group_register_admin,1,1,1,1
+session_user,session user,model_motorcycle_session,group_register_user,1,1,0,0
+session_read_all,session read all,model_motorcycle_session,,1,0,0,0

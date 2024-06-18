@@ -12,11 +12,13 @@
         'security/registry_group.xml',
         'security/ir.model.access.csv',
         'security/registry_security.xml',
+        'data/session_data.xml',
         'views/menuitems.xml',
         'views/registry_views.xml',
+#        'views/session_views.xml',
     ],
     'demo': [
-        'demo/motor_demo.xml',
+#        'demo/motor_demo.xml',
     ],
     'application': True,
 }
