@@ -19,7 +19,7 @@ class Session(models.Model):
 
     @api.constrains('license_plate')
     def _check_license_plate_size(self):
-        pattern = '^[A-Z]{1,3}\d{1,4}[A-Z]{0,2}$'
+        pattern = '^[A-Z]{1,3}/d{1,4}[A-Z]{0,2}$'
         for registry in self.filtered(lambda r: r.license_plate):
             match = re.match(pattern, registry.license_plate)
             if not match:
@@ -27,7 +27,7 @@ class Session(models.Model):
  
     @api.constrains('vin')
     def _check_vin_pattern(self):
-        pattern = '^[A-Z]{4}\d{2}[A-Z0-9]{2}\d{5}$'
+        pattern = '^[A-Z]{4}/d{2}[A-Z0-9]{2}/d{5}$'
         for registry in self.filtered(lambda r: r.vin):
             match = re.match(pattern, registry.vin)
             if not match:
