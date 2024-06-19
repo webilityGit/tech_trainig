@@ -66,8 +66,8 @@
             </search>
         </field>
     </record>
-
-    <record id="session_view_form" model="ir.ui.view">
+</odoo>
+<!--    <record id="session_view_form" model="ir.ui.view">
         <field name="name">session.view.form</field>
         <field name="model">motorcycle.session</field>
         <field name="arch" type="xml">
@@ -110,5 +110,5 @@
             </search>
         </field>
     </record>
-</odoo>
+</odoo>-->
 

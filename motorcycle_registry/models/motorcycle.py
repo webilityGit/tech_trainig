@@ -24,9 +24,17 @@ class MotorcycleRegistry(models.Model):
                 vals['registry_number'] = self.env['ir.sequence'].next_by_code('registry.number')
         return super().create(vals_list)
 
+#class Session(models.Model):
+#    _name="motorcycle.session"
+#    _description="Motorcycle Session Info"
+#    _sql_constraints= [('vin_unique', 'UNIQUE(vin)', 'Error Message.')]
+
+#    name = fields.Char(string="Title")
+#    registry_number = fields.Char(string="Registry Number", default="MNR0000", copy=False, required=True, readonly=True)
+
     @api.constrains('license_plate')
     def _check_license_plate_size(self):
-        pattern = '^[A-Z]{1,3}/d{1,4}[A-Z]{0,2}$'
+        pattern = '^[A-Z]{1,3}\\d{1,4}[A-Z]{0,2}$'
         for registry in self.filtered(lambda r: r.license_plate):
             match = re.match(pattern, registry.license_plate)
             if not match:
@@ -34,7 +42,7 @@ class MotorcycleRegistry(models.Model):
  
     @api.constrains('vin')
     def _check_vin_pattern(self):
-        pattern = '^[A-Z]{4}/d{2}[A-Z0-9]{2}/d{5}$'
+        pattern = '^[A-Z]{4}\\d{2}[A-Z0-9]{2}\\d{5}$'
         for registry in self.filtered(lambda r: r.vin):
             match = re.match(pattern, registry.vin)
             if not match:
@@ -42,12 +50,12 @@ class MotorcycleRegistry(models.Model):
             if not registry.vin[0:2] == 'KA':
                 raise ValidationError('Only motorcycles from Kawil Motors are allowed')
 
-class Session(models.Model):
-    _name="motorcycle.session"
-    _description="Motorcycle Session Info"
+#class Session(models.Model):
+#    _name="motorcycle.session"
+#    _description="Motorcycle Session Info"
 #    _sql_constraints= [('vin_unique', 'UNIQUE(vin)', 'Error Message.')]
 
-    name = fields.Char(string="Title")
+#    name = fields.Char(string="Title")
 #    registry_number = fields.Char(string="Registry Number", default="MNR0000", copy=False, required=True, readonly=True)
 
 #    @api.model_create_multi

@@ -15,7 +15,7 @@
         'data/session_data.xml',
         'views/menuitems.xml',
         'views/registry_views.xml',
-#        'views/session_views.xml',
+        'views/session_views.xml',
     ],
     'demo': [
 #        'demo/motor_demo.xml',
