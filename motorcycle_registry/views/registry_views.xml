@@ -23,8 +23,6 @@
                         <group>
                             <separator string="Owner Information"/>
                                 <field name="owner_id" string="Owner"/>
-                                <field name="first_name" string="First name"/>
-                                <field name="last_name" string="Last name"/>
                                 <field name="phone" string="Phone"/>
                                 <field name="email" string="Email"/>
                         </group>
@@ -53,8 +51,6 @@
                 <field name="year" string="Year"/>
                 <field name="license_plate" string="License Plate"/>
                 <field name="owner_id" string="Owner"/>
-                <field name="first_name" string="Owner First Name"/>
-                <field name="last_name" string="Owner Last Name"/>
             </tree>
         </field>
     </record>

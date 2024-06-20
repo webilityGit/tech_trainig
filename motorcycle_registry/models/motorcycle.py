@@ -12,17 +12,15 @@ class MotorcycleRegistry(models.Model):
     certificate_title = fields.Binary()
     current_mileage = fields.Float()
     date_registry = fields.Date()
-    first_name = fields.Char(required=True)
-    last_name = fields.Char()
     license_plate = fields.Char()
     registry_number = fields.Char(string="Registry Number", default="MNR0000", copy=False, required=True, readonly=True)
     vin = fields.Char(required=True)
     owner_id = fields.Many2one(comodel_name="res.partner", string="Owner")
     email = fields.Char(related="owner_id.email")
     phone = fields.Char(related="owner_id.phone")
-    make = fields.Char(compute="_compute_make", store=True)
-    model = fields.Char(compute="_compute_model")
-    year = fields.Char(compute="_compute_year")
+    make = fields.Char(compute="_compute_from_vin", store=True)
+    model = fields.Char(compute="_compute_from_vin")
+    year = fields.Char(compute="_compute_from_vin")
     
 
     @api.model_create_multi
