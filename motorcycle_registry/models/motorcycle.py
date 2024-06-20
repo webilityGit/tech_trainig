@@ -58,21 +58,34 @@ class MotorcycleRegistry(models.Model):
             if not registry.vin[0:2] == 'KA':
                 raise ValidationError('Only motorcycles from Kawil Motors are allowed')
 
-    @api.depends("vin")
-    def _compute_make(self):
-        for record in self:
-            if record:
-                record.make = record.vin[0:2]
+    @api.depends('vin')
+    def _compute_from_vin(self):
+        registries_with_vin = self.filtered(lambda r: r.vin)
+        registries_with_vin._check_vin_pattern()
+        for registry in registries_with_vin:
+            registry.make = registry.vin[:2]
+            registry.model = registry.vin[2:4]
+            registry.year = registry.vin[4:6]
+        for registry in (self - registries_with_vin):
+            registry.make = False
+            registry.model = False
+            registry.year = False
+                
+#    @api.depends("vin")
+#    def _compute_make(self):
+#        for record in self:
+#            if record:
+#                record.make = record.vin[0:2]
 
-    @api.depends("vin")
-    def _compute_model(self):
-        for record in self:
-            record.model = record.vin[2:4]
+#    @api.depends("vin")
+#    def _compute_model(self):
+#        for record in self:
+#            record.model = record.vin[2:4]
 
-    @api.depends("vin")
-    def _compute_year(self):
-        for record in self:
-            record.year = record.vin[4:6]
+#    @api.depends("vin")
+#    def _compute_year(self):
+#        for record in self:
+#            record.year = record.vin[4:6]
     
 
 #class Session(models.Model):
