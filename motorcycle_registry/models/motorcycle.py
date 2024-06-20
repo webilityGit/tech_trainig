@@ -18,7 +18,7 @@ class MotorcycleRegistry(models.Model):
     owner_id = fields.Many2one(comodel_name="res.partner", string="Owner")
     email = fields.Char(related="owner_id.email")
     phone = fields.Char(related="owner_id.phone")
-    make = fields.Char(compute="_compute_from_vin", store=True)
+    make = fields.Char(compute="_compute_from_vin")
     model = fields.Char(compute="_compute_from_vin")
     year = fields.Char(compute="_compute_from_vin")
     
