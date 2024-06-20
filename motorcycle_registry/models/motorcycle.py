@@ -7,6 +7,7 @@ class MotorcycleRegistry(models.Model):
     _name = "motorcycle.registry"
     _description = "Motorcycle Registry"
     _rec_name = "registry_number"
+    _sql_constraints= [('vin_unique', 'UNIQUE(vin)', 'The VIN number needs to be unique.')]
     
     certificate_title = fields.Binary()
     current_mileage = fields.Float()
@@ -16,6 +17,13 @@ class MotorcycleRegistry(models.Model):
     license_plate = fields.Char()
     registry_number = fields.Char(string="Registry Number", default="MNR0000", copy=False, required=True, readonly=True)
     vin = fields.Char(required=True)
+    owner_id = fields.Many2one(comodel_name="res.partner", string="Owner")
+    email = fields.Char(related="owner_id.email")
+    phone = fields.Char(related="owner_id.phone")
+    make = fields.Char(compute="_compute_make", store=True)
+    model = fields.Char(compute="_compute_model")
+    year = fields.Char(compute="_compute_year")
+    
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -49,6 +57,23 @@ class MotorcycleRegistry(models.Model):
                 raise ValidationError('Invalid VIN')
             if not registry.vin[0:2] == 'KA':
                 raise ValidationError('Only motorcycles from Kawil Motors are allowed')
+
+    @api.depends("vin")
+    def _compute_make(self):
+        for record in self:
+            if record:
+                record.make = record.vin[0:2]
+
+    @api.depends("vin")
+    def _compute_model(self):
+        for record in self:
+            record.model = record.vin[2:4]
+
+    @api.depends("vin")
+    def _compute_year(self):
+        for record in self:
+            record.year = record.vin[4:6]
+    
 
 #class Session(models.Model):
 #    _name="motorcycle.session"

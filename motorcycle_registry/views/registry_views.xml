@@ -12,16 +12,21 @@
                     <group>
                         <group>
                             <separator string="Motorcycle Information"/>
-                               <field name="registry_number" string="Registry number"/>
-                               <field name="vin" string="VIN"/>
-                               <field name="current_mileage" string="Current Mileage"/>
-                               <field name="license_plate" string="License Plate Number"/> 
+                                <field name="registry_number" string="Registry number"/>
+                                <field name="vin" string="VIN"/>
+                                <field name="make" string="Make"/>
+                                <field name="model" string="Model"/>
+                                <field name="current_mileage" string="Current Mileage"/>
+                                <field name="license_plate" string="License Plate Number"/> 
                                 
                         </group>
                         <group>
                             <separator string="Owner Information"/>
-                            <field name="first_name" string="First name"/>
-                            <field name="last_name" string="Last name"/>
+                                <field name="owner_id" string="Owner"/>
+                                <field name="first_name" string="First name"/>
+                                <field name="last_name" string="Last name"/>
+                                <field name="phone" string="Phone"/>
+                                <field name="email" string="Email"/>
                         </group>
                     </group>
                     <notebook>
@@ -43,7 +48,11 @@
             <tree string="Register List">
                 <field name="registry_number" string="Registry Number"/>
                 <field name="vin" string="VIN"/>
+                <field name="make" string="Make"/>
+                <field name="model" string="Model"/>
+                <field name="year" string="Year"/>
                 <field name="license_plate" string="License Plate"/>
+                <field name="owner_id" string="Owner"/>
                 <field name="first_name" string="Owner First Name"/>
                 <field name="last_name" string="Owner Last Name"/>
             </tree>
@@ -57,7 +66,8 @@
             <search>
                 <field name="registry_number"/>
                 <field name="vin"/>
-                <field name="last_name"/>
+                <field name="phone"/>
+                <field name="email"/>
                 <field name="license_plate"/>
                 <field name="date_registry" string="Date" context="{'group_by':'date_registry'}"/>
                 <filter name="filter_date_registry" date="date_registry" string="Registration Date"/>

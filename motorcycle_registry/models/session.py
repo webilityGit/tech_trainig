@@ -4,7 +4,7 @@ from odoo import api, fields, models
 class Session(models.Model):
     _name="motorcycle.session"
     _description="Motorcycle Session Info"
-#    _sql_constraints= [('vin_unique', 'UNIQUE(vin)', 'Error Message.')]
+
 
     name = fields.Char(string="Title")
 
