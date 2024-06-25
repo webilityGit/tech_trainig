@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_motorcycle_stock_motorcycle_stock,motorcycle_stock.motorcycle_stock,model_motorcycle_stock_motorcycle_stock,base.group_user,1,1,1,1
+manager_admin,manager admin,model_motorcycle_registry,group_register_admin,1,1,1,1
