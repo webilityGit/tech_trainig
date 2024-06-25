@@ -1,0 +1,24 @@
+{
+    'name': 'Motorcycle Registry',
+    'summary': 'Registration of Motorcycle',
+    'description': 'Motorcycle Registry',
+    'license': 'OPL-1',
+    'author': 'webilityGit',
+    'version':'0.0.1',
+    'category':'Kawiil/Custom Modules',
+    'website': 'https://github.com/webilityGit/tech_training',
+    'depends': [],
+    'data': [
+        'security/registry_group.xml',
+        'security/ir.model.access.csv',
+        'security/registry_security.xml',
+        'data/session_data.xml',
+        'views/menuitems.xml',
+        'views/registry_views.xml',
+        'views/session_views.xml',
+    ],
+    'demo': [
+#        'demo/motor_demo.xml',
+    ],
+    'application': True,
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_only_form_view" model="ir.ui.view">
+        <field name="name">product.template.only.form.view.inherit.motorcycle.stock</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="motorcycle_data" string="Motorcycle Data" attrs="{'invisible':[('detailed_type', '!=', 'motorcycle')]}" groups="motorcycle_registry.group_register_admin">
+                    <group>
+                        <group>
+                            <separator string="Motorcycle Information"/>
+                            <field name="make"/>
+                            <field name="model"/>
+                            <field name="year"/>
+                            <field name="curb_weight"/>
+                        </group>
+                        <group>
+                            <separator string="Motor Information"/>
+                            <field name="horsepower"/>
+                            <field name="top_speed"/>
+                            <field name="torque"/>
+                        </group>
+                        <group>
+                            <separator string="Power Information"/>
+                            <field name="battery_capacity"/>
+                            <field name="charge_time"/>
+                            <field name="range"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

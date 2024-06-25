@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="registry_stock" parent="motorcycle_registry.menu_motorcycle" name="Registry" sequence="1">
+        <menuitem name="Product" id="motorcycle_registry_stock_list" action="stock.product_template_action_product" sequence="3"/>
+    </menuitem>
+</odoo>
