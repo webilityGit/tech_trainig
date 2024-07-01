@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--<template id="report_motorcycle">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Report Title</h2>
+                        <p>This object's name is <span t-field="doc.name"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>-->
+    
+    <record id="report_motorcycle_action" model="ir.actions.report">
+        <field name="name">Motorcycle Report</field>
+        <field name="model">motorcycle.registry</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">motorcycle_registry.report_motorcycle</field>
+    <!--    <field name="print_report_name">'Motorcycle-Card'</field> -->
+        <field name="binding_model_id" ref="model_motorcycle_registry"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>
