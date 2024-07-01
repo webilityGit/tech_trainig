@@ -16,6 +16,8 @@
         'views/menuitems.xml',
         'views/registry_views.xml',
         'views/session_views.xml',
+        'views/motorcycle_report_template.xml',
+        'views/motorcycle_report_views.xml',
     ],
     'demo': [
 #        'demo/motor_demo.xml',

@@ -30,13 +30,6 @@ class MotorcycleRegistry(models.Model):
                 vals['registry_number'] = self.env['ir.sequence'].next_by_code('registry.number')
         return super().create(vals_list)
 
-#class Session(models.Model):
-#    _name="motorcycle.session"
-#    _description="Motorcycle Session Info"
-#    _sql_constraints= [('vin_unique', 'UNIQUE(vin)', 'Error Message.')]
-
-#    name = fields.Char(string="Title")
-#    registry_number = fields.Char(string="Registry Number", default="MNR0000", copy=False, required=True, readonly=True)
 
     @api.constrains('license_plate')
     def _check_license_plate_size(self):
