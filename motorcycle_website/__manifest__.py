@@ -5,7 +5,7 @@
 #    'website': 'https://github.com/webilityGit/tech_training',
 #    'category': 'Kawiil/Custom Modules',
 #    'version': '0.0.1',
-#    'depends': ['motorcycle_stock, website'],
+#    'depends': [''],
 #    'data': [
 #        'views/motorcycle_report_template.xml',
 #        'views/motorcycle_report_views.xml',
