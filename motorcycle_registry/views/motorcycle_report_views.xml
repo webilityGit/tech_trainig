@@ -5,11 +5,11 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>Report Title</h2>
+                        <h2>Motorcycle:</h2>
                         <p>This object's name is <span t-field="doc.owner_id"/></p>
-                        <p>This object's name is <span t-field="doc.owner_id"/></p>
-                        <p>This object's name is <span t-field="doc.owner_id"/></p>
-                        <p>This object's name is <span t-field="doc.owner_id"/></p>
+                        <p>This object's licence plate is <span t-field="doc.license_plate"/></p>
+                        <p>This object's registration number is <span t-field="doc.registry_number"/></p>
+                        <p>This object's vin number is <span t-field="doc.vin"/></p>
                     </div>
                 </t>
             </t>
