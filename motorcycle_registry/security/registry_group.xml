@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_register_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="comment">Holds the different Motorcycle Registry for Users</field>
+    </record>
+    <record id="group_register_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="comment">Holds all the different Motorcycle Registry Groups</field>
+        <field name="implied_ids" eval="[Command.link(ref('motorcycle_registry.group_register_user'))]"/>
+    </record>
+</odoo>

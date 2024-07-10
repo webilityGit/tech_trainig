@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data noupdate="1">
+        <record id="motor_01" model="motorcycle.registry">
+            <field name="first_name">Vlada</field>
+            <field name="last_name">Popovic</field>
+            <field name="registry_number">MRN0001</field>
+            <field name="current_mileage">250</field>
+            <field name="date_registry">2024-1-1</field>
+            <field name="vin">KLV111</field>
+        </record>
+        <record id="motor_02" model="motorcycle.registry">
+            <field name="first_name">Stefan</field>
+            <field name="last_name">Jestrovic</field>
+            <field name="registry_number">MRN0002</field>
+            <field name="current_mileage">5250</field>
+            <field name="date_registry">2023-8-23</field>
+            <field name="vin">KLV222</field>
+        </record>
+        <record id="motor_03" model="motorcycle.registry">
+            <field name="first_name">Jaksa</field>
+            <field name="last_name">Zivkovic</field>
+            <field name="registry_number">MRN0003</field>
+            <field name="current_mileage">23250</field>
+            <field name="date_registry" eval="(datetime.today() - relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+            <field name="vin">KLV333</field>
+        </record>
+        <record id="motor_04" model="motorcycle.registry">
+            <field name="first_name">Klara</field>
+            <field name="last_name">Grujic</field>
+            <field name="registry_number"></field>
+            <field name="current_mileage">1110</field>
+            <field name="date_registry" eval="(datetime.today() - relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+            <field name="vin">KLV33</field>
+        </record>
+    </data>
+</odoo>
